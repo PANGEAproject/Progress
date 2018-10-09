@@ -30,9 +30,12 @@
 python extract_data_corenlp.py 1 $1
 python extract_data_corenlp.py 1 $2
 
+$only_sentences_RI=$(cut -f3 $1.check)
+$only_sentences_OTHER=$(cut -f3 $2.check)
+
 # 2) Run corenlp.sh to extract the raw data of catergories for each file. 
-/export/apps/corenlp/corenlp.sh -annotators tokenize,ssplit,pos,lemma,ner -outputFormat conll -file $(cut -f3 $1.check) -outputDirectory . 
-/export/apps/corenlp/corenlp.sh -annotators tokenize,ssplit,pos,lemma,ner -outputFormat conll -file $(cut -f3 $2.check) -outputDirectory . 
+/export/apps/corenlp/corenlp.sh -annotators tokenize,ssplit,pos,lemma,ner -outputFormat conll -file $only_sentences_RI -outputDirectory . 
+/export/apps/corenlp/corenlp.sh -annotators tokenize,ssplit,pos,lemma,ner -outputFormat conll -file $only_sentences_OTHER -outputDirectory . 
 
 # 3) Parse raw results from corenlp to generate an intermediate file with all categories for each sentence (i.e. word split by ' ' and categories for word split by '|'). 
 python extract_data_corenlp.py 2 $1.check.conll > $1.check.conll.parsed

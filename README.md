@@ -3,9 +3,9 @@
 Aquí se encuentra el repositorio que los archivos de la primera 
 entrega del proyecto de Bioinformática del Equipo #3:
 
-Proyecto PANGEA: Creación de una base de datos de variantes genómica.
+1.  Proyecto PANGEA: Creación de una base de datos de variantes genómica.
 
-Clasificación automática de textos por medio de aprendizaje máquina.
+2.  Clasificación automática de textos por medio de aprendizaje máquina.
 
 Integrantes: 
 Jesús Antonio Cázares Rodríguez 
